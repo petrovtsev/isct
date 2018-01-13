@@ -1,0 +1,79 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#mbl {
+  /* 100% width will work for mobile menu, 300px for example */
+  width: 300px;
+  font-family: 'Montserrat', Helvetica;
+  font-size: 16px;
+}
+#mbl label {
+  display: block;
+  padding: 15px 20px;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  color: #b0cfe4;
+  background: #5196C4;
+  font-size: 24px;
+}
+#mbl span.fa {
+  color: rgba(255, 255, 255, 0.5);
+  float: right;
+}
+#mbl span.fa:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+#mbl input {
+  display: none;
+}
+#mbl input:checked ~ article {
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
+  height: 230px;
+}
+#mbl article {
+  margin-top: -1px;
+  overflow: hidden;
+  height: 0px;
+  position: relative;
+  z-index: 0;
+  -webkit-transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
+}
+#mbl article ul {
+  background: #77add1;
+  height: 100%;
+  margin: 0;
+  list-style: none;
+}
+#mbl article ul li {
+  padding: 14px;
+  padding-left: 25px;
+  border-top: 2px solid #468fc0;
+}
+#mbl article ul li:first-child {
+  padding-top: 16px;
+  border-top: 0;
+}
+#mbl article ul li:hover {
+  background: #86b6d6;
+}
+#mbl article ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#mblBtm {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 5px;
+  overflow: hidden;
+  background: #2c6083;
+}

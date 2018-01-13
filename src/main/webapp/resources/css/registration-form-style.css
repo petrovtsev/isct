@@ -1,0 +1,124 @@
+.ui-panelgrid .ui-panelgrid-cell {
+    padding-left: 0px !important;
+}
+
+.ui-selectoneradio label {
+    width: 180px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.price-label {
+    color: white;
+    font-weight: normal;
+}
+
+.btn-custom {
+    border-radius: 0px;
+    background: #41467b;;
+    color: white;
+    font-weight: normal !important;
+    border: none;
+}
+
+.one-menu, .ui-widget-header .ui-inputfield, .ui-widget-content .ui-inputfield {
+    width: 100%;
+    border-radius: 0px;
+    padding-left: 0px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-bottom: 1.3px solid #c5c5c5;
+}
+
+.one-menu:focus, .ui-inputfield:focus {
+    border: none;
+    border-bottom: 1.3px solid #40457a;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.5) !important;
+    outline-style: none;
+}
+
+.ui-panelgrid .ui-panelgrid-cell label {
+    margin: 0px;
+    font-size: 18px;
+    color: #383838;
+    font-weight: normal;
+}
+
+.ui-panelgrid .ui-widget tbody tr td, .ui-panelgrid-blank td {
+    margin: 0px;
+}
+
+#registration-box {
+    font-size: 18px;
+}
+
+.ui-icon-bullet {
+    background-position: -81px -145px !important;
+}
+
+.ui-panelgrid {
+    width: 90%;
+}
+
+.price-box {
+    margin-bottom: 0px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.price-label {
+    color: black;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 768px) {
+    .price-box {
+        width: 100%;
+        font-weight: normal;
+        border-radius: 5px;
+        margin-bottom: 0px;
+        padding: 8px;
+        background: #ae3030;
+        text-align: center;
+    }
+
+    .price-label {
+        color: white;
+        font-weight: normal;
+        font-size: 18px;
+    }
+
+    .ui-selectoneradio label {
+        font-size: 18px;
+    }
+}
+
+
+.ui-inputswitch, .ui-inputswitch .ui-inputswitch-on, .ui-inputswitch .ui-inputswitch-off, .ui-inputswitch .ui-inputswitch-on, .ui-inputswitch .ui-inputswitch-on, .ui-inputswitch .ui-inputswitch-handle  {
+    height: 34px !important;
+    font-weight: normal !important;
+}
+
+.ui-inputswitch{
+    margin:10px;
+}
+
+.ui-inputswitch .ui-inputswitch-handle {
+    background:#cdcdcd;
+
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.5) !important;
+    border: 1.3px solid #c5c5c5;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    background:#404579;
+    color: white;
+    text-shadow: none !important;
+    font-weight:normal !important;
+}
+
+.ui-inputswitch .ui-inputswitch-off {
+    color:black;
+}

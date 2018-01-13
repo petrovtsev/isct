@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content="International Symposium on Consumer Electronics"/>
+    <meta name="keywords" content="International, Symposium, Electronics"/>
+
+    <title>ISCT-2018</title>
+
+    <h:outputStylesheet library="css" name="registration-form-style.css"/>
+    <h:outputStylesheet library="css" name="font-awesome.min.css"/>
+    <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    <h:outputStylesheet library="css" name="animate.css"/>
+    <h:outputStylesheet library="css" name="morphext.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=en" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        ymaps.ready(init);
+        var myMap;
+
+        function init() {
+            myMap = new ymaps.Map("map", {
+                center: [59.967713, 30.313709],
+                zoom: 15,
+                controls: []
+            });
+
+            var myPlacemark = new ymaps.Placemark([59.969305, 30.315946], {}, {
+                iconLayout: 'default#image',
+                iconImageHref: 'https://isct2018.ru/images/map.png',
+                iconImageSize: [60, 62]
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+            myMap.behaviors.disable('scrollZoom');
+        }
+    </script>
+
+</h:head>
+<h:body>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter47153784 = new Ya.Metrika({
+                        id: 47153784,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true
+                    });
+                } catch (e) {
+                }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript>
+        <div><p:graphicImage src="https://mc.yandex.ru/watch/47153784" style="position:absolute; left:-9999px;" alt=""/>
+        </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+
+    <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel"></h2>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hidden-md hidden-lg" id="mbl">
+        <div class="menu_wrapper">
+            <input id="menu" name="mblmenu" type="checkbox"/>
+            <label for="menu">
+                <p:graphicImage src="../resources/images/logo_smaller.svg" width="250"/>
+            </label>
+            <article>
+                <ul class="caps">
+
+                    <li class="locale">
+                        <a href="../en/index.xhtml">
+                            <p:graphicImage url="../resources/images/locale/en.png" style="width: 40px"/>
+                            En
+                        </a>
+                        <a href="../ru/index.xhtml">
+                            <p:graphicImage url="../resources/images/locale/ru.png" style="width: 40px"/>
+                            Ru
+                        </a>
+                    </li>
+                    <li><a href="#participate">About</a></li>
+                    <li><a href="#topics">Topics</a></li>
+                    <li><a href="#information">Information</a></li>
+                    <li><a href="#registration">Registration</a></li>
+                    <li><a href="#speakers">Speakers</a></li>
+                    <li><a href="#committees">Committees</a></li>
+
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <section id="home" class="header-background">
+        <nav class="hidden-xs hidden-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <a href="#home">
+                                <p:graphicImage url="../resources/images/transparent.png" width="120" alt=""/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-8 menu" style="padding: 0px">
+                        <ul style="padding-left: 0px">
+                            <li><a href="#participate">About</a></li>
+                            <li><a href="#topics">Topics</a></li>
+                            <li><a href="#information">Information</a></li>
+                            <li><a href="#registration">Registration</a></li>
+                            <li><a href="#speakers">Speakers</a></li>
+                            <li><a href="#committees">Committees</a></li>
+                            <li class="locale">
+                                <a href="../en/index.xhtml">
+                                    <p:graphicImage url="https://isct2018.ru/images/locale/en.png" style="width: 40px"/>
+                                </a>
+                            </li>
+                            <li class="locale">
+                                <a href="../ru/index.xhtml">
+                                    <p:graphicImage url="../resources/images/locale/ru.png" style="width: 40px"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="row">
+            <div class="col-md-12 clock">
+                <div id="clock"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 header">
+                <h1>2018 IEEE 22nd International Symposium</h1>
+                <h1>on Consumer Technologies</h1>
+                <h3>11 - 12 May 2018, St-Petersburg, Russia</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="participate">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12" style="height: 100%; max-height: 680px">
+
+                </div>
+
+                <div class="col-md-12">
+                    <h1>About</h1>
+                    <h4 class="mt20">dear friends!</h4>
+                    The IEEE Russia (Northwest) Section and the IEEE Russia (Northwest) Section BT/CE/COM Joint Chapter are
+                    soliciting
+                    technical papers for oral and poster presentations at the 22nd annual conference,
+                    IEEE ISCT International Symposium on Consumer Technologies
+                    (former International Symposium on Consumer Electronics) that takes place in
+                    <b>St-Petersburg, Russia on 11th - 12th May 2018</b>. ISCT is the established forum for innovative
+                    research
+                    in all technology areas of consumer electronics.
+                    <br/>
+                    <br/>
+                    <div class="videoWrapper">
+                        <iframe width="100%" height="100%" type="text/html"
+                                src="https://www.youtube.com/embed/rSL3mSfcLFg?enablejsapi=1"
+                                frameborder="0">
+                        </iframe>
+                    </div>
+                    <br/>
+                    Sincerely yours,
+                    <br/>
+                    Dr. Dmitry Vavilov, ISCT 2018 General Chair
+                    <br/>
+                    <p><a href="mailto:Dmitry.Vavilov@t-systems.com">Dmitry.Vavilov@t-systems.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="topics">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Consumer Technologies in 10 years</h1>
+                    <p class="mt40">
+                        ISCT is the established forum for innovative research in all technology areas of consumer
+                        electronics.
+                        <br/>
+                        Paper contributions are sought in but are not limited to following areas:
+                    </p>
+                    <ul class="list-group row">
+                        <div class="col-md-12">
+                            <ol>Internet of Things and Internet of Everywhere (IoT)</ol>
+                            <ol>Consumer Healthcare Systems (CHS)</ol>
+                            <ol>Energy Management of CE Hardware and Software Systems (EMC)</ol>
+                            <ol>Application-Specific CE for Smart Cities (SMC)</ol>
+                            <ol>Artificial Intelligence in Consumer Technologies (AIC)</ol>
+                            <ol>Consumer Technologies Quality and Testing (CTQ)</ol>
+                            <ol>Telecom and Network Technologies (TNT)</ol>
+                            <ol>AV Systems, Image and Video, Cameras and Acquisition (AVS)</ol>
+                            <ol>CE Sensors and MEMS (CSM)</ol>
+                            <ol>Smartphone and Mobile Device Technologies (MDT)</ol>
+                            <ol>Entertainment, Gaming, Virtual and Augmented Reality (EGV)</ol>
+                            <ol>TV, RF and Wireless Technologies (TRW)</ol>
+                            <ol>Education in Consumer Technologies Area (EDU)</ol>
+                            <ol>Other Technologies Related with CE (MIS)</ol>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="information">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>INFORMATION FOR AUTHORS</h1>
+
+                    <p>
+                        Authors are invited to submit original, unpublished manuscripts of 2- to 6-page
+                        length at https://www.isct2018.ru
+                        Previously published papers or papers under review for other conferences/journals s
+                        hould not be submitted for consideration. Authors may prepare original work of maximum 6
+                        pages with an 200-word abstract using double-column IEEE conference-format
+                        <a href="https://www.ieee.org/conferences_events/conferences/publishing/templates.html">template</a>.
+                    </p>
+                    <br/>
+                    <p>
+                        <a class="btn btn-success btn-blue btn-lg" href="https://edas.info/newPaper.php?c=24269">Submit
+                            paper</a>
+                    </p>
+                    <br/>
+                    <p>
+                        All accepted papers (including regular papers, special session papers)
+                        will be published in the ISCT 2018 Proceedings and submitted to IEEE Xplore.
+                    </p>
+                    <p>
+                        The authors must sign IEEE <a href="../resources/download/IEEE%20COPYRIGHT%20FORM.pdf">
+                        Copyright form
+                    </a>.
+                    </p>
+                    <b>Important dates of ICCT 2018 are the following:</b>
+                    <ul>
+                        <li>Submission Deadline: January 8, 2018</li>
+                        <li>Acceptance Notification: January 29, 2018</li>
+                        <li>Submission of Final Version: February 26, 2018</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dates" style="padding-top: 0px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb40">
+                    <h1>important dates</h1>
+                </div>
+                <div class="col-md-4 col-xs-12 text-center block-circle-date">
+                    <h5>submission<br/>deadline</h5>
+                    <span class="circle">29</span>
+                    <span class="circle-date">January 2018</span>
+                </div>
+
+                <div class="col-md-4 col-xs-12 text-center block-circle-date">
+                    <h5>acceptance<br/>notification</h5>
+                    <span class="circle">19</span>
+                    <span class="circle-date">February 2018</span>
+                </div>
+
+                <div class="col-md-4 col-xs-12 text-center block-circle-date">
+                    <h5>submission<br/>of final Version</h5>
+                    <span class="circle">26</span>
+                    <span class="circle-date">February 2018</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <h1>Registration</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <p><b>PAYMENT INSTRUCTIONS VIA SWIFT IN EUR,USD</b></p>
+
+                    <div class="hidden-xs hidden-sm">
+                        <table id="price-table">
+                            <tr>
+                                <th></th>
+                                <th>Blind bird by Friday, 19 January</th>
+                                <th>Early bird by Friday, 16 February</th>
+                                <th>Normal by Friday, 16 March</th>
+                                <th>Late / On-Site after 16 March</th>
+                            </tr>
+                            <tr>
+                                <td>IEEE Member/ CE  Society Member</td>
+                                <td>€200</td>
+                                <td>€300</td>
+                                <td>€400</td>
+                                <td>€500</td>
+                            </tr>
+                            <tr>
+                                <td>Non-Member</td>
+                                <td>€300</td>
+                                <td>€400</td>
+                                <td>€500</td>
+                                <td>€600</td>
+                            </tr>
+                            <tr>
+                                <td>IEEE Life Member</td>
+                                <td>€100</td>
+                                <td>€150</td>
+                                <td>€200</td>
+                                <td>€250</td>
+                            </tr>
+                            <tr>
+                                <td>Student IEEE Member / CE  Society Member</td>
+                                <td>€100</td>
+                                <td>€150</td>
+                                <td>€200</td>
+                                <td>€250</td>
+                            </tr>
+                            <tr>
+                                <td>Student Non-Member</td>
+                                <td>€150</td>
+                                <td>€200</td>
+                                <td>€250</td>
+                                <td>€300</td>
+                            </tr>
+                            <tr>
+                                <td>ONE-DAY IEEE Member / CE  Society Member</td>
+                                <td>€100</td>
+                                <td>€150</td>
+                                <td>€200</td>
+                                <td>€250</td>
+                            </tr>
+                            <tr>
+                                <td>ONE-DAY Non-Member</td>
+                                <td>€150</td>
+                                <td>€200</td>
+                                <td>€250</td>
+                                <td>€300</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <br/>
+
+                </div>
+            </div>
+        </div>
+
+        <h:form id="form">
+
+            <div class="container" id="registration-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="color-blue">Registration Form</h3>
+                    </div>
+                    <div class="col-md-6">
+
+                        <p:panelGrid columns="1" columnClasses="ui-grid-col-2,ui-grid-col-10"
+                                     styleClass="ui-panelgrid-blank">
+
+                            <p:outputLabel value="Title *"/>
+                            <h:selectOneMenu styleClass="one-menu" value="#{registrationController.guest.title}">
+                                <f:selectItems value="#{registrationController.titles}"
+                                               var="title"
+                                               itemValue="#{title}"
+                                               itemLabel="#{title.name}"/>
+                            </h:selectOneMenu>
+
+                            <p:outputLabel value="First name *"/>
+                            <p:inputText value="#{registrationController.guest.firstName}"
+                                         required="true"/>
+
+                            <p:outputLabel value="Last name *"/>
+                            <p:inputText value="#{registrationController.guest.lastName}"
+                                         required="true"/>
+
+                            <p:outputLabel value="Email *"/>
+                            <p:inputText value="#{registrationController.guest.email}"
+                                         required="true"
+                                         placeholder="example@domain.com"/>
+
+                            <p:outputLabel value="Phone"/>
+                            <p:inputText value="#{registrationController.guest.phone}"
+                                         placeholder="+7(999)000-00-00"/>
+                        </p:panelGrid>
+                    </div>
+                    <div class="col-md-6">
+                        <p:panelGrid columns="1" columnClasses="ui-grid-col-2,ui-grid-col-10"
+                                     styleClass="ui-panelgrid-blank">
+                            <p:outputLabel value="Country *"/>
+                            <p:inputText value="#{registrationController.guest.country}"
+                                         required="true"
+                                         placeholder="Russia"/>
+
+                            <p:outputLabel value="City"/>
+                            <p:inputText value="#{registrationController.guest.city}"
+                                         placeholder="Moscow"/>
+
+                            <p:outputLabel value="Organization"/>
+                            <p:inputText value="#{registrationController.guest.organization}"
+                                         placeholder="Example"/>
+
+                            <p:outputLabel value="Other support"/>
+                            <p:inputText value="#{registrationController.guest.otherSupport}"/>
+                        </p:panelGrid>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <br/>
+                        <h3 class="color-blue">Category</h3>
+
+                        <p:selectOneRadio id="radio" value="#{registrationController.typeId}" layout="responsive"
+                                          columns="3">
+                            <p:ajax update="price" event="valueChange"
+                                    listener="#{registrationController.changeTypeListener}"/>
+                            <f:selectItems value="#{registrationController.allGuestTypes}" var="type"
+                                           itemLabel="#{type.nameEn}"
+                                           itemValue="#{type.id}"/>
+                        </p:selectOneRadio>
+
+                        <br/>
+
+                        <p:panelGrid columns="1"
+                                     columnClasses="ui-grid-col-2,ui-grid-col-10"
+                                     styleClass="ui-panelgrid-blank">
+                            <p:outputLabel value="Member number (edas) *"
+                                           rendered="#{registrationController.guest.guestType.member}"/>
+                            <p:inputText value="#{registrationController.guest.memberNumber}"
+                                         rendered="#{registrationController.guest.guestType.member}"
+                                         required="true"
+                                         placeholder="9999-9999"/>
+                        </p:panelGrid>
+
+                        <p:panelGrid columns="2"
+                                     columnClasses="ui-grid-col-10,ui-grid-col-2"
+                                     styleClass="ui-panelgrid-blank">
+                            <p:outputLabel value="Visa support" style="min-width: 120px"/>
+                            <p:inputSwitch value="#{registrationController.guest.visaSupport}" styleClass="switch"/>
+                        </p:panelGrid>
+
+                        <div class="price-box">
+                            <p:outputLabel styleClass="price-label hidden-sm hidden-xs" value="Price:&#160;"/>
+                            <p:outputLabel styleClass="price-label" id="price"
+                                           value="€#{registrationController.guest.guestType.price}"/>
+                        </div>
+
+                        <br/>
+
+                        <h:commandLink styleClass="btn-custom btn btn-success btn-blue btn-lg"
+                                       value="Pay now"
+                                       action="#{registrationController.registration()}"/>
+
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </section>
+
+    <section id="sponsorship" style="padding-top: 0px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Patronage Opportunities</h1>
+
+                    <h3>Diamond Patron ($10,000.00)</h3>
+
+                    <p>
+                        Logo on conference web site, with link to company’s site or any page of company material.
+                        Opportunity to suggest a banquet speech/presentation speaker for the conference.
+                        A full page color ad in the final conference program.
+                        Patronage listing in final conference program to include brief company overview.
+                        Prominent signage identifying company as a Diamond Patron.
+                        Company-supplied banner prominently displayed during the entire Conference.
+                        Acknowledgment in opening address.
+                        Eight (8) complementary full conference registrations including the banquette.
+                    </p>
+
+                    <h3>Platinum Patron ($5,000.00)</h3>
+
+                    <p>
+                        Logo on conference web site, with link to company’s site or any page of company material.
+                        Opportunity to suggest a banquet speech/presentation (30 minutes) speaker for the conference.
+                        A half-page color ad in the final conference program.
+                        Patronage listing in final conference program to include brief company overview.
+                        Prominent signage identifying company as a Platinum Patron.
+                        Company-supplied banner prominently displayed during the entire Conference.
+                        Acknowledgment in opening address.
+                        Four (4) complementary full conference registrations including the banquette.
+                    </p>
+
+                    <h3>Gold Patron ($3,000.00)</h3>
+
+                    <p>
+                        Logo on conference web site, with link to company’s site or any page of company material.
+                        Option to briefly address the attendees (10 min).
+                        A quarter-page color ad in the final conference program.
+                        Patronage listing in final conference program to include brief company overview.
+                        Prominent signage identifying company as a Gold Patron.
+                        Acknowledgment in opening address.
+                        Two (2) complementary full conference registrations.
+                    </p>
+
+                    <h3>Silver Patron ($2,000.00)</h3>
+
+                    <p>
+                        Logo on conference web site, with link to company’s site or any page of company material.
+                        Patronage listing in final conference program to include brief company overview.
+                        Prominent signage identifying company as a Silver Patron.
+                        Acknowledgment in opening address.
+                        One (1) complementary full conference registrations.
+                    </p>
+
+                    <h3>Other Patronage Opportunities</h3>
+
+                    <p>AM/PM Coffee Breaks Sponsorship ($1,000.00)</p>
+                    <p>Welcome Reception Sponsorship ($1,000.00)</p>
+                    <p>Conference Luncheons on Friday or Sunday ($1,000.00)</p>
+                    <p>Industry products for prize drawings</p>
+
+                    <p>
+                        If you have any questions, or would like us to customize a package just for your company, please
+                        contact
+                        Conference General Chair Dr. Dmitry Vavilov at dmitry.vavilov@t-systems.com
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Keynote Speakers</h1>
+                </div>
+            </div>
+            <div class="row mt40">
+                <div class="col-md-2">
+                    <a href="#" data-toggle="modal" data-target="#myModal" data-naslov="Elsen Ingo"
+                       data-telo='
+
+                    Ingo is active in the ML and Distributed Computing business for more than 30 years.
+                    He learned programming on Transputer based clusters applied in the autonomous vehicles of the
+                    PROMETHEUS research program and later designed an coprocessor card for neural networks during
+                    his PhD studies. He is now with T-Systems where he is the Chief Engineer for the Digital Processes branch.
+
+                '>
+                        <div class="img-container">
+                            <p:graphicImage url="../resources/images/speakers/Elsen_Ingo_2.jpg" class="img-responsive"
+                                            alt=""/>
+                            <span>Bio</span>
+                        </div>
+                    </a>
+                    <h3>Elsen Ingo</h3>
+                    <p><a href="#" data-toggle="modal" data-target="#myModal"
+                          style="color: white"
+                          data-naslov="Real-Time Prediction of Train Arrivals with Artificial Intelligence"
+                          data-telo='
+                      The talk will present a solution that T-Systems has created for Deutsche Bahn to improve the passenger information by predicting the arrival of trains in real time based on the trains current positions.
+                      It will be shown, how "classical" statistical machine learning approaches can be combined with artificial neural networks to solve the problem. The solution is designed in a way that it can scale horizontally based on an Hadoop based HPC platform.
+                      '>
+                        Real-Time Prediction of Train Arrivals with Artificial Intelligence
+                    </a>
+                    </p>
+                </div>
+
+                <div class="col-md-2">
+                    <a href="#" data-toggle="modal" data-target="#myModal" data-naslov="Guido Majewski"
+                       data-telo='
+
+                        Guido Majewski – an expert in software development processes – has specialized since the beginning of his IT career in 1999 on the topics Application lifecycle management and development processes. He managed several companies in optimizing their development processes and is responsible for software development processes of the Solution Center Airport Management in the T-Systems since 2010. Additionally Guido acts as a Product and Innovation Manager in the area of Airport Analytics within the Solution Center. This includes standard BI technology as well as Realtime Analytics in the area of Dashboards for Operational Control Centers and the quite new topic of Passenger Experience.
+
+                '>
+                        <div class="img-container">
+                            <p:graphicImage url="../resources/images/speakers/MAJ_Avatar_200x200.jpg" class="img-responsive"
+                                 alt=""/>
+                            <span>Bio</span>
+                        </div>
+                    </a>
+                    <h3>Guido Majewski</h3>
+                    <p><a href="#" data-toggle="modal" data-target="#myModal"
+                          style="color: white"
+                          data-naslov="Passenger Experience - not only for Passengers"
+                          data-telo='
+
+                        With the quite new topic of Passenger Experience airports try  to give passengers the best possible experience during their journey in their airport – from leaving their home up to reaching their travel goal. The airport wants to reduce the stress-level of passengers to increase the travel experience. There are some evident achievements, of course, but when you widen the focus in this area you can find a lot of potential to additionally optimize the operation of the airport.
+
+                      '>
+                        Passenger Experience - not only for Passengers
+                    </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="committees">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <h1>Committees</h1>
+                </div>
+            </div>
+            <div class="mt20 row">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="heading1">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1"
+                                       aria-expanded="true" aria-controls="collapse1">
+                                        Organizing committee
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="heading1">
+                                <div class="panel-body">
+                                    <p>
+                                        <strong>Dmitrii Vavilov, General Chair</strong>, T-Systems RUS, Russia<br/>
+                                        <strong>Stefan Mozar</strong>, IEEE Consumer Electronics, Australia<br/>
+                                        <strong>Dmitry Tkachenko</strong>, IEEE Russia (Northwest) Broadcast Technology
+                                        Society, Consumer Electronics Society and Communications Society Joint Chapter,
+                                        Russia<br/>
+                                        <strong>Konstantin Glasman</strong>, St. Petersburg State University of Film and
+                                        Television, Russia<br/>
+                                        <strong>Alexey Melezhik</strong>, The Union of Power Engineers, Russia<br/>
+                                        <strong>Sergey Shaposhnikov</strong>, St.Petersburg Electrotechnical University
+                                        LETI, Russia<br/>
+                                        <strong>Alexander Babayan</strong>, Conference Treasurer, Saint-Petersburg
+                                        Filmmakers Union, Russia<br/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseFour"
+                                       aria-expanded="true" aria-controls="collapseFour">
+                                        Program Committee
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <p>
+                                        <strong>Alexey Melezhik, General Chair of the program committee</strong>, The Union
+                                        of Power Engineers, Russia<br/>
+                                        <strong>Dmitrii Vavilov</strong>, T-Systems RUS, Russia<br/>
+                                        <strong>Stefan Mozar</strong>, IEEE Consumer Electronics, Australia<br/>
+                                        <strong>Dmitry Tkachenko</strong>, IEEE Russia (Northwest) Broadcast Technology
+                                        Society, Consumer Electronics Society and Communications Society Joint Chapter,
+                                        Russia<br/>
+                                        <strong>Konstantin Glasman</strong>, St. Petersburg State University of Film and
+                                        Television, Russia<br/>
+                                        <strong>Vyacheslav Nesterov</strong>, Dell EMC Russia Center of Excellence,
+                                        Russia<br/>
+                                        <strong>Vitaly Kozlovsky</strong>, Dell EMC Russia Center of Excellence, Russia<br/>
+                                        <strong>Georgia Diamantopoulou</strong>, OTE Group, Greece<br/>
+                                        <strong>Gordana Velikić </strong>, RT-RK, University of Novi Sad, Serbia<br/>
+                                        <strong>Sergey Baranov</strong>, Russian Academy of Science, SPPIRAN, Russia<br/>
+                                        <strong>Pavel Drobintsev</strong>, SPb State Polytechnic University, High School of
+                                        Software Engineering, Russia<br/>
+                                        <strong>Łukasz Przeździecki</strong>, T-Mobile Poland S.A, Poland<br/>
+                                        <strong>Ingo Elsen</strong>, T-Systems Int, Germany<br/>
+                                        <strong>Charles Christoph</strong>, T-Systems Int, Germany<br/>
+                                        <strong>Vassily Soloviev</strong>, T-Systems RUS, Russia<br/>
+                                        <strong>Dmitry Aleksandrov</strong>, T-Systems RUS, Bulgaria<br/>
+                                        <strong>Petr Petrovtsev</strong>, T-Systems RUS, Russia<br/>
+                                        <strong>Andrey Korenkov</strong>, T-Systems RUS, Russia<br/>
+                                        <strong>Milan Bjelica</strong>, University of Novi Sad, Serbia<br/>
+                                        <strong>Hans Cycon</strong>, HTW-Berlin, Germany<br/>
+                                        <strong>Reinhard Moeller</strong>, Germany<br/>
+                                        <strong>Evgenia Grinenko</strong>, St. Petersburg State University of Film and
+                                        Television, Russia<br/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="map" class="map-yandex"></div>
+
+    <section id="footer">
+        <div id="sponsors">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 style="color: black;">Friends of the ISCT Events</h1>
+                    </div>
+                </div>
+                <div class="row mt40 text-center">
+                    <div class="col-md-2 col-xs-4 col-lg-1">
+                        <a href="http://www.ieee.org/index.html" target="_blank">
+                            <p:graphicImage url="../resources/images/sponsors/ieee.png" alt=""/>
+                        </a>
+                    </div>
+
+                    <div class="col-md-2 col-xs-4 col-lg-1">
+                        <a href="https://www.t-systems.com" target="_blank">
+                            <p:graphicImage url="../resources/images/sponsors/telecom.jpg" alt=""/>
+                        </a>
+                    </div>
+
+                    <div class="col-md-2 col-xs-4 col-lg-1">
+                        <a href="https://www.telekom.com/en" target="_blank">
+                            <p:graphicImage url="../resources/images/sponsors/Deutsche-Telekom.jpg" alt=""/>
+                        </a>
+                    </div>
+
+                    <div class="col-md-2 col-xs-4 col-lg-1">
+                        <a href="http://www.rt-rk.com/" target="_blank">
+                            <p:graphicImage url="../resources/images/sponsors/rt-rk.png" alt=""/>
+                        </a>
+                    </div>
+
+                    <div class="col-md-2 col-xs-4 col-lg-1">
+                        <a href="http://secr.ru" target="_blank">
+                            <p:graphicImage url="../resources/images/sponsors/secr.jpg" alt=""/>
+                        </a>
+                    </div>
+
+                    <div class="col-md-2 col-xs-4 col-lg-1">
+                        <a href="http://www.gozinc.org" target="_blank">
+                            <p:graphicImage url="../resources/images/sponsors/zinc-logo.png" alt=""/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h:outputScript library="js" name="jquery.min.js"/>
+    <h:outputScript library="js" name="waypoints.min.js"/>
+    <h:outputScript library="js" name="jquery.countdown.min.js"/>
+    <h:outputScript library="js" name="jquery.counterup.min.js"/>
+    <h:outputScript library="js" name="bootstrap.min.js"/>
+    <h:outputScript library="js" name="classie.js"/>
+    <h:outputScript library="js" name="morphext.min.js"/>
+    <h:outputScript library="js" name="custom_rus.js" charset="UTF-8"/>
+</h:body>
+</html>

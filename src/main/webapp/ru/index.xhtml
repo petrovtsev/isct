@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content="International Symposium on Consumer Electronics"/>
+    <meta name="keywords" content="International, Symposium, Electronics"/>
+
+    <title>ISCT-2018</title>
+
+    <h:outputStylesheet library="css" name="registration-form-style.css"/>
+    <h:outputStylesheet library="css" name="font-awesome.min.css"/>
+    <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    <h:outputStylesheet library="css" name="animate.css"/>
+    <h:outputStylesheet library="css" name="morphext.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
+
+</h:head>
+<h:body>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter47153784 = new Ya.Metrika({
+                        id: 47153784,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true
+                    });
+                } catch (e) {
+                }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript>
+        <div><p:graphicImage url="https://mc.yandex.ru/watch/47153784" style="position:absolute; left:-9999px;" alt=""/>
+        </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+
+    <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel"></h2>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hidden-md hidden-lg" id="mbl">
+        <div class="menu_wrapper">
+            <input id="menu" name="mblmenu" type="checkbox"/>
+            <label for="menu">
+                <p:graphicImage url="../images/logo_smaller.svg" width="250"/>
+            </label>
+            <article>
+                <ul class="caps">
+
+                    <li class="locale">
+                        <a href="../en/index.xhtml">
+                            <p:graphicImage url="../images/locale/en.png" style="width: 40px"/>
+                            En
+                        </a>
+                        <a href="../ru/index.xhtml">
+                            <p:graphicImage url="../images/locale/ru.png" style="width: 40px"/>
+                            Ru
+                        </a>
+                    </li>
+                    <li><a href="#participate">О конференции</a></li>
+                    <li><a href="#information">Информация</a></li>
+                    <li><a href="#registration">Регистрация</a></li>
+
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <section id="home" class="header-background">
+        <nav class="hidden-xs hidden-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <a href="#home">
+                                <p:graphicImage url="../images/transparent.png" width="120" alt=""/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-8 menu" style="padding: 0px">
+                        <ul style="padding-left: 0px">
+                            <li><a href="#participate">О конференции</a></li>
+                            <li>
+                                <a href="#information">Информация</a>
+                            </li>
+                            <li>
+                                <a href="#registration">Регистрация</a>
+                            </li>
+                            <li class="locale">
+                                <a href="../en/index.xhtml">
+                                    <p:graphicImage url="https://isct2018.ru/images/locale/en.png" style="width: 40px"/>
+                                </a>
+                            </li>
+                            <li class="locale">
+                                <a href="../ru/index.xhtml">
+                                    <p:graphicImage url="https://isct2018.ru/images/locale/ru.png" style="width: 40px"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="row">
+            <div class="col-md-12 clock">
+                <div id="clock"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 header">
+                <h1>2018 IEEE 22 международный симпозиум</h1>
+                <h1>по технологиям потребительской электроники</h1>
+                <h3>11-12 мая, Санкт-Петербург, Россия</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="participate">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12" style="height: 100%; max-height: 680px">
+
+                </div>
+
+                <div class="col-md-12">
+                    <h1>О конференции</h1>
+                    <h4 class="mt20">Уважаемые коллеги!</h4>
+                    <p>
+                        Российская Северо-Западная секция IEEE и Российское Северо-Западное отделение IEEE по технологиям
+                        телерадиовещания, потребительской электроники и связи предлагают Вам принять участие в 22-ом
+                        международном симпозиуме по технологиям потребительской электроники (ISCT 2018), который состоится
+                        11-12 мая 2018 года в Санкт-Петербурге. Темой симпозиума являются инновации во всех технологиях,
+                        имеющих отношение к потребительской электронике, включая такие области, как интернет вещей,
+                        медицинские технологии, энергетика, умный дом и умный город, искусственный интеллект,
+                        телекоммуникации, ТВ, радио, беспроводные и мобильные устройства. С особым интересом мы будем
+                        обсуждать перспективы и пути развития потребительской электроники в течение следующих десяти лет, а
+                        также соответствующие запросы к системе высшего и профессионального образования.
+                    </p>
+                    <p>
+                        Ждем Вас в Петербурге!
+                    </p>
+                    <br/>
+                    <br/>
+                    <div class="videoWrapper">
+                        <iframe width="100%" height="100%" type="text/html"
+                                src="https://www.youtube.com/embed/rSL3mSfcLFg?enablejsapi=1"
+                                frameborder="0">
+                        </iframe>
+                    </div>
+                    <br/>
+                    <p>Искренне Ваш,</p>
+                    <p>Дмитрий Вавилов,</p>
+                    <p>Председатель организационного комитета ISCT2018</p>
+                    <br/>
+                    <p><a href="mailto:Dmitry.Vavilov@t-systems.com">Dmitry.Vavilov@t-systems.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="information" style="padding-top: 0px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>ИНФОРМАЦИЯ ДЛЯ АВТОРОВ</h1>
+
+                    <p>
+                        Мы предлагаем Вам предоставить оригинальные, ранее не публиковавшиеся и не отосланные на другие
+                        конференции статьи
+                        <b>на английском языке</b> объемом от двух до шести страниц посредством системы
+                        EDAS,
+                        для этого используйте следующую ссылку (необходима предварительная регистрация в системе EDAS).
+                    </p>
+                    <br/>
+                    <p>
+                        <a class="btn btn-success btn-blue btn-lg" href="https://edas.info/newPaper.php?c=24269">
+                            Подать статью
+                        </a>
+                    </p>
+                    <br/>
+                    <p>
+                        Обязательным является использование образца оформления статей (template) IEEE и строгое следование
+                        <a href="https://www.ieee.org/conferences_events/conferences/publishing/templates.html">
+                            правилам подготовки и оформления статей.
+                        </a>
+
+                    </p>
+                    <p>
+                        К статье также должна быть приложена <a
+                            href="../download/IEEE%20COPYRIGHT%20FORM.pdf">IEEE
+                        Copyright form.</a>
+                    </p>
+                    <P>
+                        Статьи, принятые на конференцию, будут представлены для публикации в системе IEEE Xplore.
+                    </P>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dates">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb40">
+                    <h1>Важные даты</h1>
+                </div>
+                <div class="col-md-4 col-xs-12 text-center block-circle-date">
+                    <h5>крайний срок<br/>подачи статей</h5>
+                    <span class="circle">29</span>
+                    <span class="circle-date">Января 2018</span>
+                </div>
+
+                <div class="col-md-4 col-xs-12 text-center block-circle-date">
+                    <h5>подтверждение приема<br/>статей на конференцию</h5>
+                    <span class="circle">19</span>
+                    <span class="circle-date">Февраля 2018</span>
+                </div>
+
+                <div class="col-md-4 col-xs-12 text-center block-circle-date">
+                    <h5>подача окончательного<br/>варианта статьи</h5>
+                    <span class="circle">26</span>
+                    <span class="circle-date">Февраля 2018</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <h1>Регистрация</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <p>
+                        Стоимость для представителей российских бюджетных организаций (в рублях):
+                    </p>
+
+                    <div class="hidden-xs hidden-sm">
+                        <table id="price-table">
+                            <tr>
+                                <th></th>
+                                <th>До 19 января</th>
+                                <th>До 16 февраля</th>
+                                <th>До 16 марта</th>
+                                <th>После 16 марта</th>
+                            </tr>
+                            <tr>
+                                <td>IEEE Member/ CE  Society Member</td>
+                                <td>2000₽</td>
+                                <td>3000₽</td>
+                                <td>4000₽</td>
+                                <td>5000₽</td>
+                            </tr>
+                            <tr>
+                                <td>Non-Member</td>
+                                <td>3000₽</td>
+                                <td>4000₽</td>
+                                <td>5000₽</td>
+                                <td>6000₽</td>
+                            </tr>
+                            <tr>
+                                <td>IEEE Life Member</td>
+                                <td>1000₽</td>
+                                <td>1500₽</td>
+                                <td>2000₽</td>
+                                <td>2500₽</td>
+                            </tr>
+                            <tr>
+                                <td>Student IEEE Member / CE  Society Member</td>
+                                <td>1000₽</td>
+                                <td>1500₽</td>
+                                <td>2000₽</td>
+                                <td>2500₽</td>
+                            </tr>
+                            <tr>
+                                <td>Student Non-Member</td>
+                                <td>1500₽</td>
+                                <td>2000₽</td>
+                                <td>2500₽</td>
+                                <td>3000₽</td>
+                            </tr>
+                            <tr>
+                                <td>ONE-DAY IEEE Member / CE  Society Member</td>
+                                <td>1000₽</td>
+                                <td>1500₽</td>
+                                <td>2000₽</td>
+                                <td>2500₽</td>
+                            </tr>
+                            <tr>
+                                <td>ONE-DAY Non-Member</td>
+                                <td>1500₽</td>
+                                <td>2000₽</td>
+                                <td>2500₽</td>
+                                <td>3000₽</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+
+        <h:form id="form">
+
+            <div class="container" id="registration-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="color-blue">Форма регистрации</h3>
+                    </div>
+                    <div class="col-md-6">
+
+                        <p:panelGrid columns="1" columnClasses="ui-grid-col-2,ui-grid-col-10"
+                                     styleClass="ui-panelgrid-blank">
+
+                            <p:outputLabel value="Как к Вам обращаться? *"/>
+                            <h:selectOneMenu styleClass="one-menu" value="#{registrationController.guest.title}">
+                                <f:selectItems value="#{registrationController.titles}"
+                                               var="title"
+                                               itemValue="#{title}"
+                                               itemLabel="#{title.name}"/>
+                            </h:selectOneMenu>
+
+                            <p:outputLabel value="Имя *"/>
+                            <p:inputText value="#{registrationController.guest.firstName}"
+                                         required="true"/>
+
+                            <p:outputLabel value="Фамилия *"/>
+                            <p:inputText value="#{registrationController.guest.lastName}"
+                                         required="true"/>
+
+                            <p:outputLabel value="Email *"/>
+                            <p:inputText value="#{registrationController.guest.email}"
+                                         required="true"
+                                         placeholder="example@domain.com"/>
+
+                            <p:outputLabel value="Телефон"/>
+                            <p:inputText value="#{registrationController.guest.phone}"
+                                         placeholder="+7(999)000-00-00"/>
+                        </p:panelGrid>
+                    </div>
+                    <div class="col-md-6">
+                        <p:panelGrid columns="1" columnClasses="ui-grid-col-2,ui-grid-col-10"
+                                     styleClass="ui-panelgrid-blank">
+                            <p:outputLabel value="Страна *"/>
+                            <p:inputText value="#{registrationController.guest.country}"
+                                         required="true"
+                                         placeholder="Russia"/>
+
+                            <p:outputLabel value="Город"/>
+                            <p:inputText value="#{registrationController.guest.city}"
+                                         placeholder="Moscow"/>
+
+                            <p:outputLabel value="Организация"/>
+                            <p:inputText value="#{registrationController.guest.organization}"
+                                         placeholder="Example"/>
+
+                            <p:outputLabel value="Your requests and questions"/>
+                            <p:outputLabel value="Ваши пожелания и вопросы"/>
+                            <p:inputText value="#{registrationController.guest.otherSupport}"/>
+
+                        </p:panelGrid>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <br/>
+
+                        <h3 class="color-blue">Категория регистрации</h3>
+
+                        <p:selectOneRadio id="radio" value="#{registrationController.typeId}" layout="responsive"
+                                          columns="3">
+                            <p:ajax update="mbr, price" event="valueChange"
+                                    listener="#{registrationController.changeTypeListener}"/>
+                            <f:selectItems value="#{registrationController.allGuestTypes}" var="type"
+                                           itemLabel="#{type.nameRu}"
+                                           itemValue="#{type.id}"/>
+                        </p:selectOneRadio>
+
+                        <br/>
+
+                        <p:panelGrid columns="1"
+                                     id="mbr"
+                                     columnClasses="ui-grid-col-2,ui-grid-col-10"
+                                     styleClass="ui-panelgrid-blank">
+                            <p:outputLabel value="Number of IEEE member *"
+                                           rendered="#{registrationController.guest.guestType.member}"/>
+
+                            <p:outputLabel value="Номер членского билета в IEEE *"
+                                           rendered="#{registrationController.guest.guestType.member}"/>
+                            <p:inputText value="#{registrationController.guest.memberNumber}"
+                                         rendered="#{registrationController.guest.guestType.member}"
+                                         required="true"
+                                         placeholder="9999-9999"/>
+                        </p:panelGrid>
+
+                        <p:panelGrid columns="2"
+                                     columnClasses="ui-grid-col-10,ui-grid-col-2"
+                                     styleClass="ui-panelgrid-blank">
+                            <p:outputLabel value="Visa support" style="min-width: 120px"/>
+                            <p:outputLabel value="Помощь в получении визы" style="min-width: 120px"/>
+                            <p:inputSwitch value="#{registrationController.guest.visaSupport}"
+                                           offLabel="Not needed"
+                                           onLabel="Needed"
+                                           styleClass="switch"/>
+                        </p:panelGrid>
+
+                        <div class="price-box">
+                            <p:outputLabel styleClass="price-label hidden-sm hidden-xs" value="Стоимость:&#160;"/>
+                            <p:outputLabel styleClass="price-label" id="price"
+                                           value="#{registrationController.guest.guestType.priceRu}₽"/>
+                        </div>
+
+                        <br/>
+
+                        <h:commandLink styleClass="btn-custom btn btn-success btn-blue btn-lg"
+                                       value="Оплатить"
+                                       action="#{registrationController.registration()}"/>
+
+                        <br/>
+                        <br/>
+
+                        <p>
+                            <b>Спонсорские пакеты и полный список организационного и программного комитетов</b> можно найти на
+                            <a href="../en/index.xhtml">англоязычной версии сайта</a>.
+                        </p>
+                        <p>
+                            Там также предоставлена информация о лекциях и презентациях участников.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </section>
+
+    <h:outputScript library="js" name="jquery.min.js"/>
+    <h:outputScript library="js" name="waypoints.min.js"/>
+    <h:outputScript library="js" name="jquery.countdown.min.js"/>
+    <h:outputScript library="js" name="jquery.counterup.min.js"/>
+    <h:outputScript library="js" name="bootstrap.min.js"/>
+    <h:outputScript library="js" name="classie.js"/>
+    <h:outputScript library="js" name="morphext.min.js"/>
+    <h:outputScript library="js" name="custom_rus.js" charset="UTF-8"/>
+</h:body>
+</html>
