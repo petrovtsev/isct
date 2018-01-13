@@ -122,3 +122,11 @@
 .ui-inputswitch .ui-inputswitch-off {
     color:black;
 }
+
+.ui-growl{
+    min-width: 390px;
+}
+
+.ui-growl-message {
+    min-width: 290px;
+}

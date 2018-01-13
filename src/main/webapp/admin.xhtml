@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+    <meta charset="UTF-8"/>
+
+    <title>Admin</title>
+
+</h:head>
+<h:body>
+
+    <h:form>
+        <p:dataTable value="#{adminController.guestList}" var="guest">
+            <p:column headerText="id" width="30">
+                <h:outputLabel value="#{guest.id}"/>
+            </p:column>
+
+            <p:column headerText="Full name" width="220">
+                <h:outputLabel value="#{guest.title.name} #{guest.firstName} #{guest.lastName}"/>
+            </p:column>
+
+            <p:column headerText="Phone" width="100">
+                <h:outputLabel value="#{guest.phone}"/>
+            </p:column>
+
+            <p:column headerText="Email" width="160">
+                <h:outputLabel value="#{guest.email}"/>
+            </p:column>
+
+            <p:column headerText="Country" width="120">
+                <h:outputLabel value="#{guest.country}"/>
+            </p:column>
+
+            <p:column headerText="City" width="120">
+                <h:outputLabel value="#{guest.city}"/>
+            </p:column>
+
+            <p:column headerText="Organization" width="120">
+                <h:outputLabel value="#{guest.organization}"/>
+            </p:column>
+
+            <p:column headerText="Visa" width="30">
+                <h:outputLabel value="#{guest.visaSupport}"/>
+            </p:column>
+        </p:dataTable>
+    </h:form>
+</h:body>
+</html>

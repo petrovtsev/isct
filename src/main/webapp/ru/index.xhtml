@@ -111,7 +111,6 @@
                     <div class="col-md-4">
                         <div class="logo">
                             <a href="#home">
-                                <p:graphicImage url="../images/transparent.png" width="120" alt=""/>
                             </a>
                         </div>
                     </div>
@@ -342,6 +341,11 @@
                         </table>
                     </div>
                     <br/>
+
+                    <p>
+                        Информация о визах, культурной программе (и стоимости участия в ней), а также советы по выбору
+                        гостиницы будет опубликована в ближайшее время
+                    </p>
                 </div>
             </div>
         </div>
@@ -368,14 +372,17 @@
 
                             <p:outputLabel value="Имя *"/>
                             <p:inputText value="#{registrationController.guest.firstName}"
+                                         requiredMessage="Поле 'Имя' должно быть заполнено!"
                                          required="true"/>
 
                             <p:outputLabel value="Фамилия *"/>
                             <p:inputText value="#{registrationController.guest.lastName}"
+                                         requiredMessage="Поле 'Фамилия' должно быть заполнено!"
                                          required="true"/>
 
                             <p:outputLabel value="Email *"/>
                             <p:inputText value="#{registrationController.guest.email}"
+                                         requiredMessage="Поле 'Email' должно быть заполнено!"
                                          required="true"
                                          placeholder="example@domain.com"/>
 
@@ -390,6 +397,7 @@
                             <p:outputLabel value="Страна *"/>
                             <p:inputText value="#{registrationController.guest.country}"
                                          required="true"
+                                         requiredMessage="Поле 'Страна' должно быть заполнено!"
                                          placeholder="Russia"/>
 
                             <p:outputLabel value="Город"/>
@@ -400,7 +408,6 @@
                             <p:inputText value="#{registrationController.guest.organization}"
                                          placeholder="Example"/>
 
-                            <p:outputLabel value="Your requests and questions"/>
                             <p:outputLabel value="Ваши пожелания и вопросы"/>
                             <p:inputText value="#{registrationController.guest.otherSupport}"/>
 
@@ -430,13 +437,11 @@
                                      id="mbr"
                                      columnClasses="ui-grid-col-2,ui-grid-col-10"
                                      styleClass="ui-panelgrid-blank">
-                            <p:outputLabel value="Number of IEEE member *"
-                                           rendered="#{registrationController.guest.guestType.member}"/>
-
                             <p:outputLabel value="Номер членского билета в IEEE *"
                                            rendered="#{registrationController.guest.guestType.member}"/>
                             <p:inputText value="#{registrationController.guest.memberNumber}"
                                          rendered="#{registrationController.guest.guestType.member}"
+                                         requiredMessage="Поле 'Номер членского билета в IEEE' должно быть заполнено!"
                                          required="true"
                                          placeholder="9999-9999"/>
                         </p:panelGrid>
@@ -444,11 +449,10 @@
                         <p:panelGrid columns="2"
                                      columnClasses="ui-grid-col-10,ui-grid-col-2"
                                      styleClass="ui-panelgrid-blank">
-                            <p:outputLabel value="Visa support" style="min-width: 120px"/>
-                            <p:outputLabel value="Помощь в получении визы" style="min-width: 120px"/>
+                            <p:outputLabel value="Вам нужна помощь в получении визы?" style="min-width: 120px"/>
                             <p:inputSwitch value="#{registrationController.guest.visaSupport}"
-                                           offLabel="Not needed"
-                                           onLabel="Needed"
+                                           offLabel="Нет"
+                                           onLabel="Да"
                                            styleClass="switch"/>
                         </p:panelGrid>
 
@@ -460,8 +464,9 @@
 
                         <br/>
 
-                        <h:commandLink styleClass="btn-custom btn btn-success btn-blue btn-lg"
+                        <p:commandLink styleClass="btn-custom btn btn-success btn-blue btn-lg"
                                        value="Оплатить"
+                                       update="msg"
                                        action="#{registrationController.registration()}"/>
 
                         <br/>
@@ -478,6 +483,9 @@
                     </div>
                 </div>
             </div>
+
+
+            <p:growl id="msg" showDetail="true" sticky="true" />
         </h:form>
     </section>
 

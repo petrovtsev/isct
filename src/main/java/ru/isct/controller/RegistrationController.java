@@ -25,7 +25,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 @Scope(ScopeName.VIEW)
 @ManagedBean
-public class RegistrationController implements Serializable {
+public class RegistrationController extends AbstarctController implements Serializable {
 
     @Autowired
     private RegistrationModel registrationModel;
@@ -44,6 +44,7 @@ public class RegistrationController implements Serializable {
 
     public void registration() {
         registrationModel.addGuest(guest);
+        message("Поздравляем", "Вы успешно зарегистрированы на конференцию!");
     }
 
     public void changeTypeListener() {

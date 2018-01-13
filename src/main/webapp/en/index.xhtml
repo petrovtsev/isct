@@ -331,8 +331,6 @@
             <div class="row">
                 <div class="col-md-12">
 
-                    <p><b>PAYMENT INSTRUCTIONS VIA SWIFT IN EUR,USD</b></p>
-
                     <div class="hidden-xs hidden-sm">
                         <table id="price-table">
                             <tr>
@@ -396,6 +394,8 @@
 
                     <br/>
 
+                    <p>Info on visa and cultural program (with prices) as well as accommodation advices will coming soon</p>
+
                 </div>
             </div>
         </div>
@@ -454,7 +454,7 @@
                             <p:inputText value="#{registrationController.guest.organization}"
                                          placeholder="Example"/>
 
-                            <p:outputLabel value="Other support"/>
+                            <p:outputLabel value="Your requests and questions"/>
                             <p:inputText value="#{registrationController.guest.otherSupport}"/>
                         </p:panelGrid>
                     </div>
@@ -466,19 +466,20 @@
 
                         <p:selectOneRadio id="radio" value="#{registrationController.typeId}" layout="responsive"
                                           columns="3">
-                            <p:ajax update="price" event="valueChange"
+                            <p:ajax update="mbr, price" event="valueChange"
                                     listener="#{registrationController.changeTypeListener}"/>
                             <f:selectItems value="#{registrationController.allGuestTypes}" var="type"
-                                           itemLabel="#{type.nameEn}"
+                                           itemLabel="#{type.nameRu}"
                                            itemValue="#{type.id}"/>
                         </p:selectOneRadio>
 
                         <br/>
 
                         <p:panelGrid columns="1"
+                                     id="mbr"
                                      columnClasses="ui-grid-col-2,ui-grid-col-10"
                                      styleClass="ui-panelgrid-blank">
-                            <p:outputLabel value="Member number (edas) *"
+                            <p:outputLabel value="Номер членского билета в IEEE *"
                                            rendered="#{registrationController.guest.guestType.member}"/>
                             <p:inputText value="#{registrationController.guest.memberNumber}"
                                          rendered="#{registrationController.guest.guestType.member}"
@@ -490,7 +491,10 @@
                                      columnClasses="ui-grid-col-10,ui-grid-col-2"
                                      styleClass="ui-panelgrid-blank">
                             <p:outputLabel value="Visa support" style="min-width: 120px"/>
-                            <p:inputSwitch value="#{registrationController.guest.visaSupport}" styleClass="switch"/>
+                            <p:inputSwitch value="#{registrationController.guest.visaSupport}"
+                                           offLabel="No"
+                                           onLabel="Yes"
+                                           styleClass="switch"/>
                         </p:panelGrid>
 
                         <div class="price-box">
