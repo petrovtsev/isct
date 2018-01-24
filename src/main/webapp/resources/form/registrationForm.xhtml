@@ -28,7 +28,9 @@
 
                         <p:outputLabel value="First name *"/>
                         <p:inputText value="#{registrationController.guest.firstName}"
-                                     required="true"/>
+                                     required="true">
+                            <p:keyFilter regEx="/[ABC]/i"/>
+                        </p:inputText>
 
                         <p:outputLabel value="Last name *"/>
                         <p:inputText value="#{registrationController.guest.lastName}"
@@ -36,12 +38,12 @@
 
                         <p:outputLabel value="Email *"/>
                         <p:inputText value="#{registrationController.guest.email}"
-                                     required="true"
-                                     placeholder="example@domain.com"/>
+                                     required="true">
+                            <p:keyFilter regEx="/[a-z0-9_\.\-@]/i"/>
+                        </p:inputText>
 
                         <p:outputLabel value="Phone"/>
-                        <p:inputText value="#{registrationController.guest.phone}"
-                                     placeholder="+7(999)000-00-00"/>
+                        <p:inputText value="#{registrationController.guest.phone}"/>
                     </p:panelGrid>
                 </div>
                 <div class="col-md-6">
@@ -49,16 +51,13 @@
                                  styleClass="ui-panelgrid-blank">
                         <p:outputLabel value="Country *"/>
                         <p:inputText value="#{registrationController.guest.country}"
-                                     required="true"
-                                     placeholder="Russia"/>
+                                     required="true"/>
 
                         <p:outputLabel value="City"/>
-                        <p:inputText value="#{registrationController.guest.city}"
-                                     placeholder="Moscow"/>
+                        <p:inputText value="#{registrationController.guest.city}"/>
 
                         <p:outputLabel value="Organization"/>
-                        <p:inputText value="#{registrationController.guest.organization}"
-                                     placeholder="Example"/>
+                        <p:inputText value="#{registrationController.guest.organization}"/>
 
                         <p:outputLabel value="Your requests and questions"/>
                         <p:inputText value="#{registrationController.guest.otherSupport}"/>
@@ -113,7 +112,7 @@
 
                     <h:commandLink styleClass="btn-custom btn btn-success btn-blue btn-lg"
                                    value="Pay now"
-                                   action="#{registrationController.registration()}"/>
+                                   action="#{registrationController.registration('en')}"/>
 
                 </div>
             </div>

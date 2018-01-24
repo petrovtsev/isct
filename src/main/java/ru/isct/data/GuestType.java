@@ -28,6 +28,7 @@ public class GuestType {
     private List<Price> priceList;
 
     public GuestType() {
+
     }
 
     //TODO remove
@@ -39,13 +40,5 @@ public class GuestType {
         this.priceRu = priceRu;
         this.member = member;
     }
-
-//    public void getPrice (){
-//        for (Price price : priceList) {
-//            if (price.getStartDate().before(new Date()) && price.getEndDate().after(new Date())) {
-//                System.out.println("OK");
-//            }
-//        }
-//    }
 
 }

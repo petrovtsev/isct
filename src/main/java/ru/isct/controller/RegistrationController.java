@@ -1,22 +1,22 @@
 package ru.isct.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 import ru.isct.data.Guest;
 import ru.isct.data.GuestType;
 import ru.isct.data.Title;
 import ru.isct.model.RegistrationModel;
 import ru.isct.scope.ScopeName;
 
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
 
 /**
  * Created by ppetrovt on 09.01.2018.
@@ -29,7 +29,6 @@ public class RegistrationController extends AbstarctController implements Serial
 
     @Autowired
     private RegistrationModel registrationModel;
-
     private Guest guest;
 
     private Integer typeId;
@@ -39,13 +38,18 @@ public class RegistrationController extends AbstarctController implements Serial
         guest = new Guest();
         guest.setRegistrationDate(new Date());
         guest.setGuestType(getType(2));
-        typeId = 1;
+        typeId = 2;
     }
 
-    public void registration() {
-        registrationModel.addGuest(guest);
-        message("Поздравляем", "Вы успешно зарегистрированы на конференцию!");
+    public void registration(String locale) {
+        try {
+            guest.setLocale(locale);
+            FacesContext.getCurrentInstance().getExternalContext().redirect(registrationModel.registration(guest));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     public void changeTypeListener() {
         guest.setGuestType(getType(typeId));
@@ -86,4 +90,5 @@ public class RegistrationController extends AbstarctController implements Serial
     public void setTypeId(Integer typeId) {
         this.typeId = typeId;
     }
+
 }

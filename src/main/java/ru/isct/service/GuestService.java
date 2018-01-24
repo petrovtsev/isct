@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * Created by ppetrovt on 12.01.2018.
  */
-public interface GuestService extends CrudRepository<Guest, Long> {
+public interface GuestService extends CrudRepository<Guest, Integer> {
 
 }

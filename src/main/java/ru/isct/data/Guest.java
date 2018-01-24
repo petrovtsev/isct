@@ -50,4 +50,12 @@ public class Guest {
 
     private Integer paid;
 
+    private Integer price;
+
+    private String locale;
+
+    private String hash;
+
+    private boolean confirmedPayment;
+
 }
