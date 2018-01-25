@@ -43,4 +43,15 @@ public class MailService {
         email.addTo(recipient);
         email.send();
     }
+
+    public static void main(String[] args) {
+
+        try {
+            new MailService().send("diro1994@gmail.com", "test", "test");
+        } catch (EmailException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

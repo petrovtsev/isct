@@ -2,16 +2,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
 
-<f:metadata>
-    <f:viewParam name="id" value="#{successController.id}" required="true"/>
-    <f:viewParam name="key" value="#{successController.id}" required="true"/>
-</f:metadata>
+<h:head>
 
+    <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
+
+</h:head>
 <f:view>
-    <h:outputLabel value="Hello, world"/>
+
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam name="id" value="#{successController.id}" required="true"/>
+            <f:viewParam name="key" value="#{successController.key}" required="true"/>
+            <f:event type="preRenderView" listener="#{successController.proofOfPayment}"/>
+        </f:metadata>
+    </ui:define>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h:form id="form">
+                    <h1>Поздравляем! Регистрация пройдена успешно!</h1>
+                    <p>Подтверждение Вы получите на указанный адрес электронной почты</p>
+                    <p>
+                        <a href="https://isct2018.ru">Вернуться на сайт конференции</a>
+                    </p>
+                </h:form>
+            </div>
+        </div>
+    </div>
 </f:view>
 </html>

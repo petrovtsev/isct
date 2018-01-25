@@ -192,7 +192,9 @@
                     <p>Дмитрий Вавилов,</p>
                     <p>Председатель организационного комитета ISCT2018</p>
                     <br/>
-                    <p><a href="mailto:Dmitry.Vavilov@t-systems.com">Dmitry.Vavilov@t-systems.com</a></p>
+                    <p>
+                        <a href="mailto:Dmitry.Vavilov@t-systems.com">Dmitry.Vavilov@t-systems.com</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -344,7 +346,7 @@
 
                     <p>
                         Информация о визах, культурной программе (и стоимости участия в ней), а также советы по выбору
-                        гостиницы будет опубликована в ближайшее время
+                        гостиницы будет опубликована в ближайшее время.
                     </p>
                 </div>
             </div>
@@ -356,7 +358,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h3 class="color-blue">Форма регистрации</h3>
-                        <p><b>Для единообразия регистрационных данных просьба заполнить заявку на английском языке.</b></p>
+                        <p><b>Для единообразия регистрационных данных просьба заполнить заявку на английском языке.</b>
+                        </p>
                     </div>
                     <div class="col-md-6">
 
@@ -452,19 +455,72 @@
                                            styleClass="switch"/>
                         </p:panelGrid>
 
+                        <br/>
+
+                        <div>
+                            <h3>Контакты:</h3>
+                            <p>
+                                Фактический адрес: 198412, г. Санкт-Петербург, г. Ломоносов, ул. Михайловская,
+                                д. 40/7, Литера А, Пом. 16-Н
+                            </p>
+                            <p>
+                                Электронная почта:
+                                <a href="mailto:alexander.babayan@gmail.com">alexander.babayan@gmail.com</a>
+                            </p>
+                            <p>
+                                Телефоны: 8-911-214-2726
+                            </p>
+
+                            <h3>Реквизиты:</h3>
+                            <p>Общество с ограниченной ответственностью «КиноЛомоносов»</p>
+                            <p>ИНН 7819035778/ ОГРН 1167847476840,</p>
+                            <p>Юридический адрес: 198412, г. Санкт-Петербург, г. Ломоносов, ул. Михайловская,
+                                д. 40/7, Литера А, Пом. 16-Н</p>
+                            <p>Тел./факс: (812) 602-99-15</p>
+
+
+                            <h3>Способы оплаты:</h3>
+                            <p><b>Наличный расчёт</b></p>
+                            <p>Оплата наличными за участие в конференции не предусмотрена.</p>
+
+                            <p><b>Банковской картой</b></p>
+                            <p>
+                                Для выбора оплаты товара с помощью банковской карты на соответствующей странице
+                                необходимо нажать кнопку «Оплата заказа банковской картой».
+                                Оплата происходит через ПАО СБЕРБАНК с использованием
+                                Банковских карт следующих платежных систем:
+                            </p>
+                            <ul>
+                                <li>МИР</li>
+                                <li>VISA International</li>
+                                <li>Mastercard Worldwide</li>
+                            </ul>
+
+                            <p><b>Банковским переводом</b></p>
+                            <p>
+                                Для получения счета на оплату, отправьте, пожалуйста, соответствующий запрос
+                                казначею конференции Александру Бабаяну по адресу
+                                <a href="mailto:alexander.babayan@gmail.com">alexander.babayan@gmail.com</a>
+                            </p>
+                        </div>
+
+                        <br/>
+                        <br/>
+
                         <div class="price-box">
                             <p:outputLabel styleClass="price-label hidden-sm hidden-xs" value="Стоимость:&#160;"/>
                             <p:outputLabel styleClass="price-label" id="price"
                                            value="#{registrationController.guest.guestType.priceRu}₽"/>
                         </div>
 
-                        <br/>
-
                         <p:commandLink styleClass="btn-custom btn btn-success btn-blue btn-lg"
                                        value="Оплатить"
                                        update="msg"
                                        action="#{registrationController.registration(RU)}"/>
 
+                        <p:graphicImage url="../resources/images/visa-sm.png" style="margin-left: 20px;"/>
+
+                        <br/>
                         <br/>
                         <br/>
 
@@ -481,7 +537,7 @@
             </div>
 
 
-            <p:growl id="msg" showDetail="true" sticky="true" />
+            <p:growl id="msg" showDetail="true" sticky="true"/>
         </h:form>
     </section>
 

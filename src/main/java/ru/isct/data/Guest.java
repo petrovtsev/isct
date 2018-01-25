@@ -48,8 +48,6 @@ public class Guest {
 
     private String otherSupport;
 
-    private Integer paid;
-
     private Integer price;
 
     private String locale;

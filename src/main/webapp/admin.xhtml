@@ -12,7 +12,13 @@
 <h:body>
 
     <h:form>
-        <p:dataTable value="#{adminController.guestList}" var="guest">
+        <p:dataTable value="#{adminController.guestList}" var="guest"
+                     stickyHeader="true"
+                     rows="20"
+                     paginator="true"
+                     paginatorPosition="bottom"
+                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                     rowsPerPageTemplate="20,50,100">
             <p:column headerText="id" width="30">
                 <h:outputLabel value="#{guest.id}"/>
             </p:column>
@@ -21,7 +27,7 @@
                 <h:outputLabel value="#{guest.title.name} #{guest.firstName} #{guest.lastName}"/>
             </p:column>
 
-            <p:column headerText="Phone" width="100">
+            <p:column headerText="Phone" width="120">
                 <h:outputLabel value="#{guest.phone}"/>
             </p:column>
 
@@ -41,9 +47,18 @@
                 <h:outputLabel value="#{guest.organization}"/>
             </p:column>
 
-            <p:column headerText="Visa" width="30">
-                <h:outputLabel value="#{guest.visaSupport}"/>
+            <p:column headerText="Visa" width="35" style="text-align: center">
+                <h:outputLabel value="#{guest.visaSupport ? 'Yes' : 'No'}"/>
             </p:column>
+
+            <p:column headerText="Price" width="50" style="text-align: center">
+                <h:outputLabel value="#{guest.price}₽"/>
+            </p:column>
+
+            <p:column headerText="Paid" width="35"  style="text-align: center">
+                <h:outputLabel value="#{guest.confirmedPayment ? 'Yes' : 'No'}"/>
+            </p:column>
+
         </p:dataTable>
     </h:form>
 </h:body>

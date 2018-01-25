@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import ru.isct.model.SuccessModel;
 import ru.isct.scope.ScopeName;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import java.io.IOException;
@@ -32,7 +31,6 @@ public class SuccessController {
     @Setter
     private String key;
 
-    @PostConstruct
     public void proofOfPayment() {
         try {
             System.out.println(id);

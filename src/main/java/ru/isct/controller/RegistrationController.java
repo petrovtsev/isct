@@ -57,13 +57,13 @@ public class RegistrationController extends AbstarctController implements Serial
 
     public List<GuestType> getAllGuestTypes() {
         List<GuestType> guestTypes = new ArrayList<>();
-        guestTypes.add(new GuestType(1, "IEEE Member/CE  Society Member", 200, 2000, true));
-        guestTypes.add(new GuestType(2, "Non-Member", 300, 3000, false));
-        guestTypes.add(new GuestType(3, "IEEE Life Member", 100, 1000, true));
-        guestTypes.add(new GuestType(4, "Student IEEE Member/CE Society Member", 100, 1000, true));
-        guestTypes.add(new GuestType(5, "Student Non-Member", 150, 1500, false));
-        guestTypes.add(new GuestType(6, "ONE-DAY IEEE Member/CE Society Member", 100, 1000, true));
-        guestTypes.add(new GuestType(7, "ONE-DAY Non-Member", 150, 1500, false));
+        guestTypes.add(new GuestType(1, "IEEE Member/CE  Society Member", 300, 3000, true));
+        guestTypes.add(new GuestType(2, "Non-Member", 400, 4000, false));
+        guestTypes.add(new GuestType(3, "IEEE Life Member", 150, 1500, true));
+        guestTypes.add(new GuestType(4, "Student IEEE Member/CE Society Member", 150, 1500, true));
+        guestTypes.add(new GuestType(5, "Student Non-Member", 200, 2000, false));
+        guestTypes.add(new GuestType(6, "ONE-DAY IEEE Member/CE Society Member", 150, 1500, true));
+        guestTypes.add(new GuestType(7, "ONE-DAY Non-Member", 200, 2000, false));
         return guestTypes;
     }
 
