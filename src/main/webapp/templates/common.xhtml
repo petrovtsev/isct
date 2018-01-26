@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<f:view locale="ru">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>
+            <ui:insert name="title"/>
+        </title>
+        <h:outputStylesheet library="css" name="admin-form.css"/>
+    </h:head>
+    <h:body>
+        <ui:fragment rendered="#{not userBean.userAuthenticated}">
+            <ui:include src="/components/loginForm.xhtml"/>
+        </ui:fragment>
+
+        <ui:fragment rendered="#{userBean.userAuthenticated}">
+            <ui:insert name="navigation">
+                <ui:include src="/templates/navigation.xhtml"/>
+            </ui:insert>
+        </ui:fragment>
+
+        <ui:fragment rendered="#{userBean.userAuthenticated}">
+            <ui:insert name="content"/>
+        </ui:fragment>
+
+        <p:dialog modal="true" id="statusDialog" widgetVar="statusDialog" draggable="false" closable="false"
+                  resizable="false">
+            <p:graphicImage name="/images/ajaxloadingbar.gif"/>
+        </p:dialog>
+    </h:body>
+</f:view>
+</html>

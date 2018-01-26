@@ -1,0 +1,18 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:form id="navigationForm">
+        <p:menubar style="padding-top: 12px;padding-bottom: 0px; border: none; background: white">
+            <p:menuitem styleClass="logo-image-link" style="outline: none !important;" action="en">
+                <h:graphicImage styleClass="c_image" name="/images/logo_smaller.svg" height="48" style="outline: none; margin-left: 20px"/>
+            </p:menuitem>
+
+            <p:submenu label="#{userBean.user.login}" style="float:right">
+                <p:menuitem value="Logout" action="#{loginController.logout}"/>
+            </p:submenu>
+
+        </p:menubar>
+
+    </h:form>
+</ui:composition>

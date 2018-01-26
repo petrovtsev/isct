@@ -1,0 +1,91 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:form>
+        <div class="header">
+            <nav class="hidden-xs hidden-sm">
+                <div class="container" style="padding-top:10px">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="logo">
+                                <a href="#home">
+                                    <p:graphicImage url="resources/images/logo.png" class="logo" alt=""/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8 menu">
+                            <ul>
+                                <li><a href="#about">#{msg['menu.about']}</a></li>
+                                <li><a href="#speakers">#{msg['menu.speakers']}</a></li>
+                                <li><a href="#registration">#{msg['menu.registration']}</a></li>
+                                <li><a href="#committees">#{msg['menu.committees']}</a></li>
+                                <li><a href="#scheme">#{msg['menu.map']}</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-1">
+                            <p:commandLink action="#{localeBean.changeLocale('en')}">
+                                <p:graphicImage url="resources/images/lang/en.png" class="lang" alt="EN"
+                                                title="#{msg['label.language.eng']}"/>
+                            </p:commandLink>
+
+                            <p:commandLink action="#{localeBean.changeLocale('de')}" style="margin-left: 6px">
+                                <p:graphicImage url="resources/images/lang/de.png" class="lang" alt="DE"
+                                                title="#{msg['label.language.de']}"/>
+                            </p:commandLink>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <nav class="hidden-md hidden-lg">
+                <div class="container" style="padding-top:10px">
+                    <div class="row">
+                        <div class="col-md-1 menu">
+                            <ul style="padding: 0px">
+
+                                <a href="#home" style="float: left">
+                                    <p:graphicImage url="resources/images/logo-small.png"
+                                                    class="logo-small"/>
+                                </a>
+                                <li><a href="#about">#{msg['menu.about']}</a></li>
+                                <li><a href="#speakers">#{msg['menu.speakers']}</a></li>
+                                <li><a href="#scheme">#{msg['menu.map']}</a></li>
+                                <li>
+                                    <p:commandLink action="#{localeBean.changeLocale('en')}">
+                                        <p:graphicImage url="resources/images/lang/en.png" class="lang" alt="EN"
+                                                        rendered="#{not localeBean.localEng}"
+                                                        title="#{msg['label.language.eng']}"/>
+                                    </p:commandLink>
+
+                                    <p:commandLink action="#{localeBean.changeLocale('de')}" style="margin-left: 6px">
+                                        <p:graphicImage url="resources/images/lang/de.png" class="lang" alt="DE"
+                                                        rendered="#{localeBean.localEng}"
+                                                        title="#{msg['label.language.de']}"/>
+                                    </p:commandLink>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container hidden-xs hidden-sm" id="index-block" style="padding: 0px">
+                <div class="block">
+                    <div class="container">
+                        <div class="row" style="padding: 20px">
+                            <h1 class="color-white">#{msg['home.header']}</h1>
+                            <h2 class="color-white">#{msg['home.header2']}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block hidden-md hidden-lg" style="padding-left: 20px; padding-right: 20px; width: 100%">
+                <h1 class="color-white">#{msg['home.xs.header']}</h1>
+                <h2 class="color-white">#{msg['home.xs.header2']}</h2>
+            </div>
+        </div>
+    </h:form>
+</ui:composition>

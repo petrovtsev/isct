@@ -3,120 +3,181 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-
     <h:outputStylesheet library="css" name="registration-form-style.css"/>
 
-    <h:form>
+    <h:form id="registrationForm" onsubmit="capthaCheck()">
+        <div class="container">
+            <h1 class="color-magenta">#{msg['reg.header']}</h1>
+        </div>
 
         <div class="container" id="registration-box">
             <div class="row">
-                <div class="col-md-12">
-                    <h3 class="color-blue">Registration Form</h3>
-                </div>
                 <div class="col-md-6">
-
-                    <p:panelGrid columns="1" columnClasses="ui-grid-col-2,ui-grid-col-10"
-                                 styleClass="ui-panelgrid-blank">
-
-                        <p:outputLabel value="Title *"/>
-                        <h:selectOneMenu styleClass="one-menu" value="#{registrationController.guest.title}">
-                            <f:selectItems value="#{registrationController.titles}"
-                                           var="title"
-                                           itemValue="#{title}"
-                                           itemLabel="#{title.name}"/>
-                        </h:selectOneMenu>
-
-                        <p:outputLabel value="First name *"/>
+                    <p:panelGrid columns="1" columnClasses="ui-grid-col-12"
+                                 styleClass="ui-panelgrid-blank" style="width: 100%">
+                        <p:outputLabel value="#{msg['reg.label.firstName']} *"/>
                         <p:inputText value="#{registrationController.guest.firstName}"
-                                     required="true">
-                            <p:keyFilter regEx="/[ABC]/i"/>
-                        </p:inputText>
-
-                        <p:outputLabel value="Last name *"/>
-                        <p:inputText value="#{registrationController.guest.lastName}"
+                                     maxlength="60"
+                                     id="firstname"
+                                     requiredMessage="#{msg['reg.label.firstName.msg']}"
                                      required="true"/>
 
-                        <p:outputLabel value="Email *"/>
-                        <p:inputText value="#{registrationController.guest.email}"
-                                     required="true">
-                            <p:keyFilter regEx="/[a-z0-9_\.\-@]/i"/>
-                        </p:inputText>
+                        <p:outputLabel value="#{msg['reg.label.lastName']} *"/>
+                        <p:inputText value="#{registrationController.guest.lastName}"
+                                     maxlength="60"
+                                     id="lastName"
+                                     requiredMessage="#{msg['reg.label.lastName.msg']}"
+                                     required="true"/>
 
-                        <p:outputLabel value="Phone"/>
-                        <p:inputText value="#{registrationController.guest.phone}"/>
+                        <p:outputLabel value="#{msg['reg.label.email']} *"/>
+                        <p:inputText value="#{registrationController.guest.email}"
+                                     maxlength="120"
+                                     id="email"
+                                     requiredMessage="#{msg['reg.label.email.msg']}"
+                                     required="true"/>
+
+                        <p:outputLabel value="#{msg['reg.label.phone']}"/>
+                        <p:inputText value="#{registrationController.guest.phone}"
+                                     id="phone"
+                                     maxlength="15"/>
+
                     </p:panelGrid>
                 </div>
+
                 <div class="col-md-6">
-                    <p:panelGrid columns="1" columnClasses="ui-grid-col-2,ui-grid-col-10"
+                    <p:panelGrid columns="1" columnClasses="ui-grid-col-12"
+                                 style="width: 100%"
                                  styleClass="ui-panelgrid-blank">
-                        <p:outputLabel value="Country *"/>
+                        <p:outputLabel value="#{msg['reg.label.country']} *"/>
                         <p:inputText value="#{registrationController.guest.country}"
-                                     required="true"/>
+                                     required="true"
+                                     requiredMessage="#{msg['reg.label.country.msg']}"
+                                     maxlength="60"/>
 
-                        <p:outputLabel value="City"/>
-                        <p:inputText value="#{registrationController.guest.city}"/>
+                        <p:outputLabel value="#{msg['reg.label.city']}"/>
+                        <p:inputText value="#{registrationController.guest.city}"
+                                     maxlength="60"/>
 
-                        <p:outputLabel value="Organization"/>
-                        <p:inputText value="#{registrationController.guest.organization}"/>
+                        <p:outputLabel value="#{msg['reg.label.organization']}"/>
+                        <p:inputText value="#{registrationController.guest.organization}"
+                                     maxlength="70"/>
 
-                        <p:outputLabel value="Your requests and questions"/>
-                        <p:inputText value="#{registrationController.guest.otherSupport}"/>
+                        <p:outputLabel value="#{msg['reg.label.language']}"/>
+                        <h:selectOneMenu value="#{registrationController.guest.language}" styleClass="one-menu">
+                            <f:selectItem itemLabel="#{msg['label.language.eng']}" itemValue="German"/>
+                            <f:selectItem itemLabel="#{msg['label.language.de']}" itemValue="English"/>
+                        </h:selectOneMenu>
                     </p:panelGrid>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <br/>
-                    <h3 class="color-blue">Category</h3>
 
-                    <p:selectOneRadio id="radio" value="#{registrationController.typeId}" layout="responsive"
-                                      columns="3">
-                        <p:ajax update="mbr, price" event="valueChange"
-                                listener="#{registrationController.changeTypeListener}"/>
-                        <f:selectItems value="#{registrationController.allGuestTypes}" var="type"
-                                       itemLabel="#{type.nameRu}"
-                                       itemValue="#{type.id}"/>
-                    </p:selectOneRadio>
+            <br/>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p:panelGrid columns="2"
+                                 style="width: 100%"
+                                 columnClasses="ui-grid-col-10,ui-grid-col-2"
+                                 styleClass="ui-panelgrid-blank">
+                        <p:outputLabel value="#{msg['reg.questions.company']}"/>
+                        <p:inputSwitch value="#{registrationController.guest.employeeTelecom}"
+                                       offLabel="#{msg['label.switch.off']}"
+                                       onLabel="#{msg['label.switch.on']}"
+                                       styleClass="switch">
+                            <p:ajax update="questionnaire"/>
+                        </p:inputSwitch>
+                    </p:panelGrid>
+
+                    <p:panelGrid columns="2"
+                                 id="questionnaire"
+                                 style="width: 100%"
+                                 columnClasses="ui-grid-col-10,ui-grid-col-2"
+                                 styleClass="ui-panelgrid-blank">
+                        <p:outputLabel value="#{msg['reg.questions.connection']}"
+                                       rendered="#{registrationController.guest.employeeTelecom}"/>
+                        <p:inputSwitch value="#{registrationController.guest.remoteConnection}"
+                                       rendered="#{registrationController.guest.employeeTelecom}"
+                                       offLabel="#{msg['label.switch.off']}"
+                                       onLabel="#{msg['label.switch.on']}"
+                                       id="visa"
+                                       styleClass="switch"/>
+                    </p:panelGrid>
+
+                    <p:panelGrid columns="2"
+                                 style="width: 100%"
+                                 columnClasses="ui-grid-col-10,ui-grid-col-2"
+                                 styleClass="ui-panelgrid-blank">
+                        <p:outputLabel value="#{msg['reg.questions.visa']}"/>
+                        <p:inputSwitch value="#{registrationController.guest.visaSupport}"
+                                       offLabel="#{msg['label.switch.off']}"
+                                       onLabel="#{msg['label.switch.on']}"
+                                       styleClass="switch"/>
+
+
+                        <p:outputLabel value="#{msg['reg.questions.overnight']}"/>
+                        <p:inputSwitch value="#{registrationController.guest.overnightStay}"
+                                       offLabel="#{msg['label.switch.off']}"
+                                       onLabel="#{msg['label.switch.on']}"
+                                       styleClass="switch"/>
+
+                        <p:outputLabel value="#{msg['reg.questions.wouldlikeSpeaker']}"/>
+                        <p:inputSwitch value="#{registrationController.guest.speaker}"
+                                       offLabel="#{msg['label.switch.off']}"
+                                       onLabel="#{msg['label.switch.on']}"
+                                       styleClass="switch">
+                            <p:ajax update="topic"/>
+                        </p:inputSwitch>
+                    </p:panelGrid>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <p:panelGrid columns="1"
+                                 id="topic"
+                                 style="width: 100%"
+                                 columnClasses="ui-grid-col-10,ui-grid-col-2"
+                                 styleClass="ui-panelgrid-blank">
+                        <p:outputLabel value="#{msg['reg.label.topicDetails']} *"
+                                       rendered="#{registrationController.guest.speaker}"/>
+                        <p:inputText rendered="#{registrationController.guest.speaker}"
+                                     value="#{registrationController.guest.topic}"
+                                     required="true"
+                                     requiredMessage="#{msg['reg.label.topicDetails.msg']}"
+                                     style="width: 100%"/>
+                    </p:panelGrid>
 
                     <br/>
 
                     <p:panelGrid columns="1"
-                                 id="mbr"
-                                 columnClasses="ui-grid-col-2,ui-grid-col-10"
-                                 styleClass="ui-panelgrid-blank">
-                        <p:outputLabel value="Номер членского билета в IEEE *"
-                                       rendered="#{registrationController.guest.guestType.member}"/>
-                        <p:inputText value="#{registrationController.guest.memberNumber}"
-                                     rendered="#{registrationController.guest.guestType.member}"
-                                     required="true"
-                                     placeholder="9999-9999"/>
-                    </p:panelGrid>
-
-                    <p:panelGrid columns="2"
+                                 style="width: 100%"
                                  columnClasses="ui-grid-col-10,ui-grid-col-2"
                                  styleClass="ui-panelgrid-blank">
-                        <p:outputLabel value="Visa support" style="min-width: 120px"/>
-                        <p:inputSwitch value="#{registrationController.guest.visaSupport}"
-                                       offLabel="No"
-                                       onLabel="Yes"
-                                       styleClass="switch"/>
+                        <p:outputLabel value="#{msg['reg.label.questions']}"/>
+                        <p:inputTextarea rows="3" value="#{registrationController.guest.otherSupport}"
+                                         style="width: 100%"/>
+
+
+                        <p:messages id="msgs"/>
                     </p:panelGrid>
-
-                    <div class="price-box">
-                        <p:outputLabel styleClass="price-label hidden-sm hidden-xs" value="Price:&#160;"/>
-                        <p:outputLabel styleClass="price-label" id="price"
-                                       value="€#{registrationController.guest.guestType.price}"/>
-                    </div>
-
-                    <br/>
-
-                    <h:commandLink styleClass="btn-custom btn btn-success btn-blue btn-lg"
-                                   value="Pay now"
-                                   action="#{registrationController.registration('en')}"/>
-
                 </div>
             </div>
+
+            <div class="row btn-box">
+                <p:captcha requiredMessage="#{msg['captcha.msg']}" language="#{localeBean.currentLocale}"/>
+            </div>
+
+            <br/>
+
+            <div class="row">
+                <p:commandLink styleClass="btn-custom"
+                               id="registrationBtn"
+                               value="#{msg['reg.btn.reg']}"
+                               update="registrationForm"
+                               actionListener="#{registrationController.registration()}"/>
+            </div>
         </div>
+
     </h:form>
 
 </ui:composition>

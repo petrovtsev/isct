@@ -16,7 +16,7 @@ import java.io.IOException;
 public class SuccessModel {
 
     @Autowired
-    private GuestService guestService;;
+    private GuestService guestService;
 
     public void proofOfPayment(Integer id, String hash) throws Exception {
         Guest guest = guestService.findOne(id);

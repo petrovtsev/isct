@@ -1,0 +1,42 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <h:form>
+
+        <p:dataTable value="#{guestsController.guestList}" var="guest">
+            <p:column headerText="Full name" width="220">
+                <h:outputLabel value="#{guest.firstName} #{guest.lastName}"/>
+            </p:column>
+
+            <p:column headerText="Phone" width="100">
+                <h:outputLabel value="#{guest.phone}"/>
+            </p:column>
+
+            <p:column headerText="Email" width="160">
+                <h:outputLabel value="#{guest.email}"/>
+            </p:column>
+
+            <p:column headerText="Country" width="120">
+                <h:outputLabel value="#{guest.country}"/>
+            </p:column>
+
+            <p:column headerText="City" width="120">
+                <h:outputLabel value="#{guest.city}"/>
+            </p:column>
+
+            <p:column headerText="Organization" width="120">
+                <h:outputLabel value="#{guest.organization  ? 'Yes' : 'No'}"/>
+            </p:column>
+
+            <p:column headerText="Visa" width="30" style="text-align: center">
+                <h:outputLabel value="#{guest.visaSupport ? 'Yes' : 'No'}"/>
+            </p:column>
+
+            <f:facet name="footer">
+                <h:outputLabel value="Total: #{guestsController.size}" style="float: left"/>
+                <br/>
+            </f:facet>
+        </p:dataTable>
+    </h:form>
+
+</ui:composition>

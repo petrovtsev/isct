@@ -4,6 +4,25 @@
               version="2.1">
     <application>
         <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+
+        <locale-config>
+            <default-locale>en_En</default-locale>
+            <supported-locale>de_De</supported-locale>
+        </locale-config>
+
+        <resource-bundle>
+            <base-name>bundle.content</base-name>
+            <var>msg</var>
+        </resource-bundle>
     </application>
+
+    <render-kit>
+        <renderer>
+            <component-family>org.primefaces.component</component-family>
+            <renderer-type>org.primefaces.component.CaptchaRenderer</renderer-type>
+            <renderer-class>ru.isct.configuration.CaptchaRendererCS</renderer-class>
+        </renderer>
+    </render-kit>
+
 
 </faces-config>

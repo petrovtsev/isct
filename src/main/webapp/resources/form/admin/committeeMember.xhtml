@@ -1,0 +1,138 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:form id="committeeMemberForm">
+        <p:dataTable value="#{committeeMemberController.committeeMemberList}"
+                     id="committeeMemberTable"
+                     var="member"
+                     editable="true">
+
+            <p:ajax event="rowEdit" listener="#{committeeMemberController.onRowEdit}"/>
+
+            <p:column headerText="Full name" width="210">
+                <p:cellEditor>
+                    <f:facet name="output">
+                        <h:outputLabel value="#{member.fullName}"/>
+                    </f:facet>
+                    <f:facet name="input">
+                        <p:inputText value="#{member.fullName}" style="width: 99%"/>
+                    </f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Position" width="180">
+                <p:cellEditor>
+                    <f:facet name="output">
+                        <h:outputLabel value="#{member.position}"/>
+                    </f:facet>
+                    <f:facet name="input">
+                        <p:inputText value="#{member.position}" style="width: 99%"/>
+                    </f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Organization" width="180">
+                <p:cellEditor>
+                    <f:facet name="output">
+                        <h:outputLabel value="#{member.organization}"/>
+                    </f:facet>
+                    <f:facet name="input">
+                        <p:inputText value="#{member.organization}" style="width: 99%"/>
+                    </f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Country" width="180" style="height: 26px">
+                <p:cellEditor>
+                    <f:facet name="output">
+                        <h:outputLabel value="#{member.country}"/>
+                    </f:facet>
+                    <f:facet name="input">
+                        <p:inputText value="#{member.country}" style="width: 99%"/>
+                    </f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Organizing" width="100" style="text-align: center">
+                <p:cellEditor>
+                    <f:facet name="output">
+                        <h:outputLabel value="#{member.organizingMember ? 'Yes' : 'No'}"/>
+                    </f:facet>
+                    <f:facet name="input">
+                        <p:selectBooleanCheckbox value="#{member.organizingMember}"/>
+                    </f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Program" width="100" style="text-align: center">
+                <p:cellEditor>
+                    <f:facet name="output">
+                        <h:outputLabel value="#{member.programMember ? 'Yes' : 'No'}"/>
+                    </f:facet>
+                    <f:facet name="input">
+                        <p:selectBooleanCheckbox value="#{member.programMember}"/>
+                    </f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="" width="20" style="text-align: center">
+                <p:rowEditor />
+            </p:column>
+
+            <p:column headerText="" width="20" style="text-align: center">
+                <p:commandLink action="#{committeeMemberController.delete(member)}"
+                               styleClass="ui-icon ui-icon-trash"
+                               style="margin-top: -5px;"
+                               update="committeeMemberTable"/>
+            </p:column>
+
+            <f:facet name="footer">
+                <p:commandButton value="Add" onclick="PF('dlgMember').show();" style="float: left; margin-top: 4px;"/>
+                <br/>
+                <br/>
+            </f:facet>
+        </p:dataTable>
+
+
+        <p:dialog header="Add Committee Member"
+                  widgetVar="dlgMember"
+                  id="dlgMember"
+                  minWidth="700"
+                  width="1000"
+                  modal="true">
+            <p:panelGrid columns="1" columnClasses="ui-grid-col-12"
+                         styleClass="ui-panelgrid-blank" style="width: 100%">
+                <h:outputLabel value="Full name"/>
+                <p:inputText value="#{committeeMemberController.committeeMember.fullName}"/>
+
+                <h:outputLabel value="Position"/>
+                <p:inputText value="#{committeeMemberController.committeeMember.position}"/>
+
+                <h:outputLabel value="Organization"/>
+                <p:inputText value="#{committeeMemberController.committeeMember.organization}"/>
+
+                <h:outputLabel value="Country"/>
+                <p:inputText value="#{committeeMemberController.committeeMember.country}"/>
+            </p:panelGrid>
+
+            <p:panelGrid columns="2" columnClasses="ui-grid-col-2, ui-grid-col-10"
+                         styleClass="ui-panelgrid-blank">
+                <p:selectBooleanCheckbox value="#{committeeMemberController.committeeMember.organizingMember}"/>
+                <h:outputLabel value="Organizing Member"/>
+
+                <p:selectBooleanCheckbox value="#{committeeMemberController.committeeMember.programMember}"/>
+                <h:outputLabel value="Program Member"/>
+
+                <h:outputText value=""/>
+                <h:outputText value=""/>
+
+                <p:commandButton value="Save" action="#{committeeMemberController.add}"
+                                 update="committeeMemberTable, dlgMember"/>
+            </p:panelGrid>
+
+
+        </p:dialog>
+    </h:form>
+
+</ui:composition>

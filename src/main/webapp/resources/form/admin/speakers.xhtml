@@ -1,0 +1,102 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:form>
+        
+        <p:dataTable id="speakerTable" value="#{speakersController.speakers}" var="speaker"
+                     editable="true">
+
+            <p:ajax event="rowEdit" listener="#{speakersController.onRowEdit}"/>
+
+            <p:column headerText="Full name" width="180">
+                <p:cellEditor>
+                    <f:facet name="output">
+                        <h:outputLabel value="#{speaker.fullName}"/>
+                    </f:facet>
+                    <f:facet name="input">
+                        <p:inputText value="#{speaker.fullName}"/>
+                    </f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Bio" width="280">
+                <p:cellEditor>
+                    <f:facet name="output">
+                        <h:outputLabel value="#{speaker.bio}"/>
+                    </f:facet>
+                    <f:facet name="input">
+                        <p:inputText value="#{speaker.bio}"/>
+                    </f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Article title" width="140">
+                <p:cellEditor>
+                <f:facet name="output">
+                    <h:outputLabel value="#{speaker.articleTitle}"/>
+                </f:facet>
+                <f:facet name="input">
+                    <p:inputText value="#{speaker.articleTitle}"/>
+                </f:facet>
+            </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Article" width="320">
+                <p:cellEditor>
+                    <f:facet name="output">
+                        <h:outputLabel value="#{speaker.article}"/>
+                    </f:facet>
+                    <f:facet name="input">
+                        <p:inputText value="#{speaker.article}"/>
+                    </f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="" width="20" style="text-align: center">
+                <p:rowEditor />
+            </p:column>
+
+            <p:column headerText="" width="20" style="text-align: center">
+                <p:commandLink action="#{speakersController.delete(speaker)}"
+                               styleClass="ui-icon ui-icon-trash"
+                               style="margin-top: -5px;"
+                               update="speakerTable"/>
+            </p:column>
+
+            <f:facet name="footer">
+                <p:commandButton value="Add" onclick="PF('dlgSpeaker').show();" style="float: left; margin-top: 4px;" />
+                <br/>
+                <br/>
+            </f:facet>
+        </p:dataTable>
+
+        <p:dialog header="Add speaker"
+                  id="dlgSpeaker"
+                  widgetVar="dlgSpeaker"
+                  minWidth="700"
+                  width="1000"
+                  modal="true">
+            <p:panelGrid columns="1" columnClasses="ui-grid-col-12"
+                         styleClass="ui-panelgrid-blank" style="width: 100%">
+                <h:outputLabel value="Full name"/>
+                <p:inputText value="#{speakersController.speaker.fullName}"/>
+
+                <h:outputLabel value="Bio"/>
+                <p:inputTextarea rows="3" value="#{speakersController.speaker.bio}"/>
+
+                <h:outputLabel value="Article title"/>
+                <p:inputText value="#{speakersController.speaker.articleTitle}"/>
+
+                <h:outputLabel value="Article"/>
+                <p:inputTextarea rows="4" value="#{speakersController.speaker.article}"/>
+            </p:panelGrid>
+
+            <br/>
+            <br/>
+
+            <p:commandButton value="Save" action="#{speakersController.addSpeaker}" update="speakerTable, dlgSpeaker"/>
+        </p:dialog>
+    </h:form>
+
+</ui:composition>
