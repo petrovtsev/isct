@@ -24,10 +24,9 @@ import java.util.List;
 @Service
 public class SberbankService {
 
-
     private final String URI_BANK_API = "https://3dsec.sberbank.ru/payment/rest/register.do";
-    private final String URI_SUCCESS = "https://isct2018.ru/success.xhtml?";
-    private final String URI_FAIL = "https://isct2018.ru/ru/";
+    private final String URI_SUCCESS = "http://85.143.217.34/success.xhtml?";
+    private final String URI_FAIL = "http://85.143.217.34/error.xhtml";
     private final String USERNAME = "isct_2018-api";
     private final String PASSWORD = "isct_2018";
     private final String CURRENCY_RUB = "643";

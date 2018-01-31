@@ -31,8 +31,8 @@ public class SuccessModel {
 
     private void sendEmail(Guest guest){
         String recipient = guest.getEmail();
-        String subject = "Регистрация пройденна успешно!";
-        String body = guest.getFirstName() + " " + guest.getLastName() + ", регистрация пройденна успешно!";
+        String subject = "Регистрация пройдена успешно!";
+        String body = guest.getFirstName() + " " + guest.getLastName() + ", регистрация пройдена успешно!";
         try {
             new MailService().send(recipient, subject, body);
         } catch (EmailException e) {

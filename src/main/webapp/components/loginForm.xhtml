@@ -15,7 +15,7 @@
 
         <div class="login-panel">
 
-            <h:graphicImage name="/images/logo.png" height="36"/>
+            <h:graphicImage name="/images/logo_smaller.png" height="36"/>
 
             <h:panelGrid columns="1" cellpadding="5" style="width: 100%">
                 <p:inputText value="#{loginController.login}" required="true"
@@ -29,6 +29,13 @@
 
                 <p:commandButton value="Sign in"
                                  action="#{loginController.login()}"
+                                 update="msgs, statusDialog"
+                                 onclick="PF('statusDialog').show();"
+                                 icon="ui-icon-check"
+                                 ajax="false"/>
+
+                <p:commandButton value="Registration"
+                                 action="#{loginController.registration()}"
                                  update="msgs, statusDialog"
                                  onclick="PF('statusDialog').show();"
                                  icon="ui-icon-check"

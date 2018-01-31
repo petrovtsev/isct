@@ -22,14 +22,13 @@ import org.springframework.stereotype.Controller;
  */
 
 @Controller
-@Scope(ScopeName.SESSION)
+@Scope(ScopeName.VIEW)
 @ManagedBean
 @Getter
 @Setter
 public class GuestsController extends AbstarctController {
 
     private List<Guest> guestList;
-
 
     @Autowired
     private GuestsModel guestModel;

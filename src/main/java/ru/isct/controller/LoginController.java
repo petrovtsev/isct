@@ -45,8 +45,10 @@ public class LoginController extends AbstarctController {
     public void registration() {
         try {
             loginModel.registration(login, password);
+            message("Success!");
         } catch (Exception e) {
             e.printStackTrace();
+            errorMessage("Error", e.getMessage());
         }
     }
 
